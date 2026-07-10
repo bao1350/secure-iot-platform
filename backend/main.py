@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 import threading
+from fastapi.middleware.cors import CORSMiddleware
 
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
@@ -37,6 +38,16 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
@@ -82,3 +93,14 @@ def create_user(
     db.refresh(new_user)
 
     return new_user
+
+@app.get("/measures/latest")
+def get_latest_measure(db: Session = Depends(get_db)):
+
+    measure = (
+        db.query(Measure)
+        .order_by(Measure.timestamp.desc())
+        .first()
+    )
+
+    return measure
