@@ -1,4 +1,4 @@
-function SensorCard({ sensor }) {
+function SensorCard({ sensor, deleteSensor }) {
 
     return (
 
@@ -47,11 +47,23 @@ function SensorCard({ sensor }) {
 
             )}
 
+
+            <button
+
+                className="delete-button"
+
+                onClick={()=>deleteSensor(sensor.id)}
+
+            >
+
+                Supprimer le capteur
+
+            </button>
+
         </div>
 
     );
 
 }
-
 
 export default SensorCard;
