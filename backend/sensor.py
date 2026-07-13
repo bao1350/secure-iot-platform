@@ -3,35 +3,26 @@ import json
 import time
 import random
 
+client = mqtt.Client()
 
-client = mqtt.Client(
-    mqtt.CallbackAPIVersion.VERSION2
-)
-
-
-client.connect(
-    "localhost",
-    1883,
-    60
-)
-
-client.loop_start()
-
+client.connect("localhost", 1883)
 
 while True:
 
-    data = {
-        "sensor_id": 1,
-        "temperature": round(random.uniform(20, 25), 2),
-        "humidity": random.randint(40, 60),
-        "battery": 90
-    }
+    for sensor_id in [1, 2, 3]:
 
-    client.publish(
-        "iot/sensor/1",
-        json.dumps(data)
-    )
+        data = {
+            "sensor_id": sensor_id,
+            "temperature": round(random.uniform(20, 25), 2),
+            "humidity": random.randint(40, 60),
+            "battery": random.randint(80, 100)
+        }
 
-    print("📡 Envoi :", data)
+        client.publish(
+            f"iot/sensor/{sensor_id}",
+            json.dumps(data)
+        )
+
+        print(data)
 
     time.sleep(5)

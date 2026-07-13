@@ -1,81 +1,98 @@
 :root {
 
-  --text: #334155;
+    /* Couleurs principales */
+    --bg: #103853;
+    --card: #ffffff;
 
-  --text-h: #0f172a;
+    --text: #334155;
+    --text-h: #0f172a;
 
-  --bg: #e0f2fe;
+    --border: #cbd5e1;
 
-  --card: rgb(119, 23, 23);
+    /* Couleurs des éléments */
+    --room-color: #16a34a;
+    --type-color: #64748b;
+    --value-color: #0284c7;
 
-  --border: #cbd5e1;
+    --accent: #0284c7;
 
-  --accent: #0284c7;
-
-  --shadow: rgba(0,0,0,0.15);
-
-
-  font-family:
-    Arial,
-    Helvetica,
-    sans-serif;
+    --shadow: rgba(0,0,0,0.15);
 
 
-  color: var(--text);
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  background: var(--bg);
+
+    color: var(--text);
+
+    background: var(--bg);
 
 }
 
+
+/* Page entière */
 
 body {
 
-  margin: 0;
+    margin: 0;
 
-  min-height: 100vh;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-  background: var(--bg);
+    background: #245586;
 
 }
 
 
+
+/* Application React */
 
 #root {
 
-  min-height: 100vh;
+    min-height: 100vh;
 
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
+    padding: 40px;
 
 }
 
 
+
+/* Titre principal */
 
 h1 {
 
-  color: #1d7e32;
+    color: white;
 
-  font-size: 45px;
+    font-size: 45px;
 
-  margin-bottom: 30px;
+    margin-bottom: 30px;
+
+    text-align: center;
 
 }
 
 
+
+/* Titres des cartes */
 
 h2 {
 
-  color: var(--text-h);
+    color: var(--text-h);
 
 }
 
 
 
+/* Texte général */
+
 p {
 
-  margin: 15px;
+    margin: 15px;
+
+    color: var(--text);
 
 }

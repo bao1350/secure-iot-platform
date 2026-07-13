@@ -11,3 +11,8 @@ class MeasureCreate(BaseModel):
 class UserCreate(BaseModel):
     email: str
     hashed_password: str
+
+class SensorCreate(BaseModel):
+    name: str
+    room: str
+    sensor_type: str

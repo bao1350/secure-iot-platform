@@ -6,9 +6,12 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 
 from database import SessionLocal, engine
-from models import Base, Measure, User
-from schemas import MeasureCreate, UserCreate
+from models import Base, Measure, Sensor, User
+from schemas import MeasureCreate, SensorCreate, UserCreate
 from mqtt_client import start_mqtt
+
+from models import Sensor
+from schemas import SensorCreate
 
 Base.metadata.create_all(bind=engine)
 
@@ -104,3 +107,45 @@ def get_latest_measure(db: Session = Depends(get_db)):
     )
 
     return measure
+
+@app.post("/sensor")
+def create_sensor(sensor: SensorCreate,
+                  db: Session = Depends(get_db)):
+
+    new_sensor = Sensor(
+        name=sensor.name,
+        room=sensor.room,
+        sensor_type=sensor.sensor_type
+    )
+
+    db.add(new_sensor)
+    db.commit()
+    db.refresh(new_sensor)
+
+    return new_sensor
+
+@app.get("/dashboard")
+def get_dashboard(db: Session = Depends(get_db)):
+
+    sensors = db.query(Sensor).all()
+
+    dashboard = []
+
+    for sensor in sensors:
+
+        latest_measure = (
+            db.query(Measure)
+            .filter(Measure.sensor_id == sensor.id)
+            .order_by(Measure.timestamp.desc())
+            .first()
+        )
+
+        dashboard.append({
+            "id": sensor.id,
+            "name": sensor.name,
+            "room": sensor.room,
+            "sensor_type": sensor.sensor_type,
+            "measure": latest_measure
+        })
+
+    return dashboard
