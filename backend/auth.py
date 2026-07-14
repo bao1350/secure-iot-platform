@@ -10,13 +10,20 @@ from database import SessionLocal
 
 from models import User
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 security = HTTPBearer()
 
-SECRET_KEY = "secure-iot-secret-key"
 
-ALGORITHM = "HS256"
+
+SECRET_KEY = os.getenv("SECRET_KEY")
+
+ALGORITHM = os.getenv("ALGORITHM")
 
 
 
