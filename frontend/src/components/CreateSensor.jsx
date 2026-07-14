@@ -1,6 +1,8 @@
 import { useState } from "react";
 
 
+import { createSensor as createSensorApi } from "../api/sensor";
+
 function CreateSensor({ refresh }){
 
     const [name,setName] = useState("");
@@ -10,32 +12,11 @@ function CreateSensor({ refresh }){
 
     async function createSensor(){
 
-        const token = localStorage.getItem("token");
-
-        const response = await fetch(
-            "http://localhost:8000/sensor",
-            {
-                method:"POST",
-
-                headers:{
-                    "Content-Type":"application/json",
-
-                    "Authorization":
-                    `Bearer ${token}`
-                },
-
-                body:JSON.stringify({
-
-                    name:name,
-
-                    room:room,
-
-                    sensor_type:type
-
-                })
-            }
-        );
-
+        const response = await createSensorApi({
+            name: name,
+            room: room,
+            sensor_type: type
+        });
 
         const data = await response.json();
 

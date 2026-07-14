@@ -1,4 +1,4 @@
-function SensorCard({ sensor, deleteSensor }) {
+function SensorCard({ sensor, deleteSensor, onOpenHistory }) {
 
     return (
 
@@ -52,11 +52,27 @@ function SensorCard({ sensor, deleteSensor }) {
 
                 className="delete-button"
 
-                onClick={()=>deleteSensor(sensor.id)}
+                onClick={() => {
+                    if (window.confirm("Voulez-vous supprimer ce capteur ?")) {
+                        deleteSensor(sensor.id);
+                    }
+                }}
 
             >
 
                 Supprimer le capteur
+
+            </button>
+
+            <button
+
+                className="history-button"
+
+                onClick={()=>onOpenHistory(sensor.id)}
+
+            >
+
+                Voir l'historique
 
             </button>
 

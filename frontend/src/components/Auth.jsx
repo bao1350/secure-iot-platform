@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login as apiLogin, register as apiRegister } from "../api/auth";
 
 
 function Auth() {
@@ -15,20 +16,7 @@ function Auth() {
 
     async function login() {
 
-        const response = await fetch(
-            "http://localhost:8000/login",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email: loginEmail,
-                    password: loginPassword
-                })
-            }
-        );
-
+        const response = await apiLogin(loginEmail, loginPassword);
         const data = await response.json();
 
         if (data.access_token) {
@@ -48,20 +36,7 @@ function Auth() {
 
     async function register() {
 
-        const response = await fetch(
-            "http://localhost:8000/register",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    email: registerEmail,
-                    password: registerPassword
-                })
-            }
-        );
-
+        const response = await apiRegister(registerEmail, registerPassword);
         const data = await response.json();
 
         if (response.status === 200) {

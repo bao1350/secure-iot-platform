@@ -16,14 +16,19 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret")
+
+ALGORITHM = os.getenv("ALGORITHM", "HS256")
+
+try:
+    ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
+except (TypeError, ValueError):
+    ACCESS_TOKEN_EXPIRE_MINUTES = 60
+
 
 security = HTTPBearer()
 
 
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-
-ALGORITHM = os.getenv("ALGORITHM")
 
 
 
@@ -43,10 +48,9 @@ def create_access_token(data:dict):
 
     to_encode=data.copy()
 
-
-    expire=datetime.utcnow()+timedelta(
-        minutes=60
-    )
+    expire = datetime.utcnow() + timedelta(
+    minutes=ACCESS_TOKEN_EXPIRE_MINUTES
+)
 
 
     to_encode["exp"]=expire

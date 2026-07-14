@@ -1,0 +1,74 @@
+.sensor-chart-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.sensor-chart-panel {
+  width: 90%;
+  max-width: 1000px;
+  max-height: 90%;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.sensor-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.sensor-chart-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sensor-chart-controls label {
+  margin: 0;
+}
+
+.sensor-chart-section {
+  height: 220px;
+  margin-bottom: 28px;
+}
+
+.sensor-chart-section:last-child {
+  margin-bottom: 10px;
+}
+
+.sensor-chart-section h4 {
+  margin-bottom: 8px;
+}
+
+.sensor-chart-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+  font-weight: 500;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spinner-rotate 1s linear infinite;
+}
+
+@keyframes spinner-rotate {
+  to { transform: rotate(360deg); }
+}
+
+.sensor-chart-close {
+  margin-left: 12px;
+}

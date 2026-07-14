@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 import threading
+from datetime import datetime, timedelta
 
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -221,6 +222,104 @@ def get_dashboard(
     return dashboard
 
 
+# ======================
+# CAPTEUR / HISTORIQUE
+# ======================
+
+
+@app.get("/sensor/{sensor_id}")
+def get_sensor(
+    sensor_id: int,
+    db: Session = Depends(get_db),
+    user = Depends(get_current_user)
+):
+
+    sensor = (
+        db.query(Sensor)
+        .filter(
+            Sensor.id == sensor_id
+        )
+        .first()
+    )
+
+    if sensor is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Capteur non trouvé"
+        )
+
+    if sensor.user_id != user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Ce capteur ne vous appartient pas"
+        )
+
+    latest_measure = (
+        db.query(Measure)
+        .filter(Measure.sensor_id == sensor.id)
+        .order_by(Measure.timestamp.desc())
+        .first()
+    )
+
+    return {
+        "sensor": sensor,
+        "latest_measure": latest_measure
+    }
+
+
+@app.get("/sensor/{sensor_id}/history")
+def get_sensor_history(
+    sensor_id: int,
+    period: str = "today",
+    db: Session = Depends(get_db),
+    user = Depends(get_current_user)
+):
+
+    sensor = (
+        db.query(Sensor)
+        .filter(Sensor.id == sensor_id)
+        .first()
+    )
+
+    if sensor is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Capteur non trouvé"
+        )
+
+    if sensor.user_id != user.id:
+        raise HTTPException(
+            status_code=403,
+            detail="Ce capteur ne vous appartient pas"
+        )
+
+    now = datetime.utcnow()
+
+    if period == "today":
+        start = datetime(year=now.year, month=now.month, day=now.day)
+    elif period == "week":
+        start = now - timedelta(days=7)
+    elif period == "month":
+        start = now - timedelta(days=30)
+    else:
+        raise HTTPException(
+            status_code=400,
+            detail="Paramètre 'period' invalide. Utiliser 'today', 'week' ou 'month'"
+        )
+
+    measures = (
+        db.query(Measure)
+        .filter(
+            Measure.sensor_id == sensor.id,
+            Measure.timestamp >= start
+        )
+        .order_by(Measure.timestamp.desc())
+        .all()
+    )
+
+    return measures
+
+
 
 # ======================
 # AUTH
@@ -305,3 +404,23 @@ def login(
         "access_token": token,
         "token_type": "bearer"
     }
+
+app.get("/history")
+def get_history(
+    db: Session = Depends(get_db),
+    user = Depends(get_current_user)
+):
+
+    measures = (
+        db.query(Measure)
+        .join(Sensor)
+        .filter(
+            Sensor.user_id == user.id
+        )
+        .order_by(
+            Measure.timestamp.desc()
+        )
+        .all()
+    )
+
+    return measures

@@ -3,12 +3,16 @@ import { useNavigate } from "react-router-dom";
 
 import SensorCard from "./SensorCard";
 import CreateSensor from "./CreateSensor";
+import SensorChart from "./Sensor_Chart";
+import { getDashboard, getSensor } from "../api/dashboard";
+import { deleteSensor as deleteSensorApi } from "../api/sensor";
 
 function Dashboard(){
 
     const navigate = useNavigate();
 
     const [sensors, setSensors] = useState([]);
+    const [selectedSensor, setSelectedSensor] = useState(null);
 
 
     useEffect(()=>{
@@ -18,47 +22,62 @@ function Dashboard(){
         const interval = setInterval(loadDashboard,5000);
 
         return ()=>clearInterval(interval);
-
     },[]);
 
 
 
-    function loadDashboard(){
+    async function loadDashboard(){
+        try {
+            const res = await getDashboard();
 
-        const token = localStorage.getItem("token");
-
-        fetch("http://localhost:8000/dashboard",{
-
-            headers:{
-                Authorization:`Bearer ${token}`
-            }
-
-        })
-
-        .then(response=>{
-
-            if(response.status===401){
-
+            if(res.status === 401){
                 logout();
                 return;
-
             }
 
-            return response.json();
-
-        })
-
-        .then(data=>{
+            const data = await res.json();
 
             if(data){
-
                 setSensors(data);
+            }
+        }
+        catch(error){
+            console.log(error);
+        }
+    }
 
+
+    async function openHistory(id){
+
+        try{
+            const res = await getSensor(id);
+
+            if(res.status === 401){
+                logout();
+                return;
             }
 
-        })
+            if(!res.ok){
+                alert("Impossible de récupérer le capteur");
+                return;
+            }
 
-        .catch(error=>console.log(error));
+            const json = await res.json();
+
+            // backend returns { sensor: ..., latest_measure: ... }
+            const sensor = json.sensor;
+
+            // attach latest measure if present
+            if(json.latest_measure){
+                sensor.measure = json.latest_measure;
+            }
+
+            setSelectedSensor(sensor);
+
+        }catch(e){
+            console.error(e);
+            alert("Erreur réseau lors de la récupération du capteur");
+        }
 
     }
 
@@ -74,21 +93,7 @@ function Dashboard(){
             sensors.filter(sensor=>sensor.id!==id)
         );
 
-        const response = await fetch(
-
-            `http://localhost:8000/sensor/${id}`,
-
-            {
-
-                method:"DELETE",
-
-                headers:{
-                    Authorization:`Bearer ${token}`
-                }
-
-            }
-
-        );
+        const response = await deleteSensorApi(id);
 
         // Si erreur, on remet les capteurs
         if(!response.ok){
@@ -149,6 +154,7 @@ function Dashboard(){
 
                     {
 
+
                         sensors.map(sensor=>(
 
                             <SensorCard
@@ -159,6 +165,8 @@ function Dashboard(){
 
                                 deleteSensor={deleteSensor}
 
+                                onOpenHistory={openHistory}
+
                             />
 
                         ))
@@ -166,6 +174,13 @@ function Dashboard(){
                     }
 
                 </div>
+
+                {selectedSensor && (
+                    <SensorChart
+                        sensor={selectedSensor}
+                        onClose={() => setSelectedSensor(null)}
+                    />
+                )}
 
             </div>
 
