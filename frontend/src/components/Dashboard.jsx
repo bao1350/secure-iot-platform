@@ -68,10 +68,8 @@ function Dashboard(){
 
         const token = localStorage.getItem("token");
 
-        // Sauvegarde pour revenir en arrière si erreur
         const oldSensors = [...sensors];
 
-        // Suppression immédiate de l'écran
         setSensors(
             sensors.filter(sensor=>sensor.id!==id)
         );
@@ -140,11 +138,11 @@ function Dashboard(){
 
                 <CreateSensor refresh={loadDashboard}/>
 
-                <h3>
+                <p className="sensor-count">
 
-                    Nombre de capteurs : {sensors.length}
+                    Nombre de capteurs : <strong>{sensors.length}</strong>
 
-                </h3>
+                </p>
 
 
                 <div className="grid">

@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Auth from "./components/Auth";
 import Dashboard from "./components/Dashboard";
 
 import "./App.css";
@@ -22,16 +21,7 @@ function App() {
 
                     path="/"
 
-                    element={<Login />}
-
-                />
-
-
-                <Route
-
-                    path="/register"
-
-                    element={<Register />}
+                    element={<Auth />}
 
                 />
 

@@ -3,6 +3,7 @@ import threading
 
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from database import SessionLocal, engine
@@ -171,6 +172,10 @@ def delete_sensor(
 
     db.delete(sensor)
     db.commit()
+    
+    if db.query(Sensor).count() == 0:
+        db.execute(text("ALTER SEQUENCE sensors_id_seq RESTART WITH 1"))
+        db.commit()
 
     return {
         "message": "Capteur supprimé avec succès"

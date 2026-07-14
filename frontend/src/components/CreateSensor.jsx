@@ -12,7 +12,6 @@ function CreateSensor({ refresh }){
 
         const token = localStorage.getItem("token");
 
-
         const response = await fetch(
             "http://localhost:8000/sensor",
             {
