@@ -1,8 +1,8 @@
 import json
 import paho.mqtt.client as mqtt
 
-from database import SessionLocal
-from models import Measure
+from backend.database import SessionLocal
+from backend.models import Measure
 
 
 def on_connect(client, userdata, flags, reason_code, properties=None):

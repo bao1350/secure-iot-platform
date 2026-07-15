@@ -1,9 +1,9 @@
 import { apiFetch } from "./client";
 
 export async function getDashboard() {
-    return apiFetch("/dashboard");
+    return apiFetch("/sensors/dashboard");
 }
 
 export async function getSensor(sensorId) {
-    return apiFetch(`/sensor/${sensorId}`);
+    return apiFetch(`/sensors/${sensorId}`);
 }
