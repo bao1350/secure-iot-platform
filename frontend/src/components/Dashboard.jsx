@@ -13,15 +13,73 @@ function Dashboard(){
 
     const [sensors, setSensors] = useState([]);
     const [selectedSensor, setSelectedSensor] = useState(null);
+    const [liveMeasure, setLiveMeasure] = useState(null);
 
 
     useEffect(()=>{
 
         loadDashboard();
 
-        const interval = setInterval(loadDashboard,5000);
+        const interval = setInterval(loadDashboard, 5000);
 
-        return ()=>clearInterval(interval);
+        const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:8000";
+        const wsProtocol = apiUrl.startsWith("https") ? "wss" : "ws";
+        const wsUrl = `${wsProtocol}://${new URL(apiUrl).host}/ws/dashboard`;
+        const ws = new WebSocket(wsUrl);
+
+        ws.onmessage = (event) => {
+            try {
+                const update = JSON.parse(event.data);
+
+                setSensors(prev => prev.map(sensor =>
+                    sensor.id === update.sensor_id
+                        ? {
+                            ...sensor,
+                            measure: {
+                                ...(sensor.measure || {}),
+                                ...update,
+                            },
+                        }
+                        : sensor
+                ));
+
+                const newSelected = selectedSensor && selectedSensor.id === update.sensor_id
+                    ? {
+                        ...selectedSensor,
+                        measure: {
+                            ...(selectedSensor.measure || {}),
+                            ...update,
+                        },
+                    }
+                    : selectedSensor;
+
+                if (newSelected) {
+                    setSelectedSensor(newSelected);
+                }
+
+                setLiveMeasure(update);
+            }
+            catch (error) {
+                console.error("Erreur WebSocket :", error);
+            }
+        };
+
+        ws.onopen = () => {
+            console.log("WebSocket connecté", wsUrl);
+        };
+
+        ws.onclose = () => {
+            console.log("WebSocket déconnecté");
+        };
+
+        ws.onerror = (error) => {
+            console.error("WebSocket error", error);
+        };
+
+        return () => {
+            clearInterval(interval);
+            ws.close();
+        };
     },[]);
 
 
@@ -178,6 +236,7 @@ function Dashboard(){
                 {selectedSensor && (
                     <SensorChart
                         sensor={selectedSensor}
+                        liveMeasure={liveMeasure}
                         onClose={() => setSelectedSensor(null)}
                     />
                 )}

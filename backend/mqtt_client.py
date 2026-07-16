@@ -3,6 +3,7 @@ import paho.mqtt.client as mqtt
 
 from backend.database import SessionLocal
 from backend.models import Measure
+from backend.ws_manager import manager
 
 
 def on_connect(client, userdata, flags, reason_code, properties=None):
@@ -32,6 +33,13 @@ def on_message(client, userdata, msg):
         db.commit()
 
         print("✅ Mesure enregistrée dans PostgreSQL")
+        manager.broadcast_from_thread(json.dumps({
+            "sensor_id": data["sensor_id"],
+            "temperature": data["temperature"],
+            "humidity": data["humidity"],
+            "battery": data["battery"],
+            "timestamp": data.get("timestamp")
+        }))
 
     except Exception as e:
         db.rollback()

@@ -8,23 +8,16 @@ function SensorChart({ sensor, onClose }){
     const [period, setPeriod] = useState("today");
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
-    const [autoRefresh, setAutoRefresh] = useState(true);
-    const [refreshInterval, setRefreshInterval] = useState(5); // seconds
-    const [lastUpdated, setLastUpdated] = useState(null);
 
     useEffect(()=>{
-
         if(!sensor) return;
-
         fetchData();
-
-    },[sensor, period]);
+    },[sensor?.id, period]);
 
     async function fetchData(){
-
         setLoading(true);
 
-            try{
+        try{
             const res = await getSensorHistory(sensor.id, period);
 
             if(res.status === 401){
@@ -36,43 +29,23 @@ function SensorChart({ sensor, onClose }){
             const json = await res.json();
 
             const mapped = json.map(m => ({
-                time: m.timestamp,
+                time: new Date(m.timestamp).getTime(),
                 temperature: m.temperature,
                 humidity: m.humidity,
                 battery: m.battery
             }));
 
-            // reverse so older -> newer for charts
-            const raw = mapped.reverse();
+            const raw = mapped.sort((a, b) => a.time - b.time);
 
-            // use raw points (no aggregation)
             setData(raw);
 
         }catch(e){
             console.error(e);
         }finally{
             setLoading(false);
-            setLastUpdated(new Date());
         }
-
     }
 
-
-    useEffect(()=>{
-        if(!sensor) return;
-
-        if(!autoRefresh) return;
-
-        const id = setInterval(()=>{
-            fetchData();
-        }, refreshInterval * 1000);
-
-        return ()=>clearInterval(id);
-
-    },[sensor, period, autoRefresh, refreshInterval]);
-
-
-    
 
     return (
 
@@ -103,13 +76,11 @@ function SensorChart({ sensor, onClose }){
                 {!loading && data.length === 0 && <p>Aucune mesure pour cette période.</p>}
 
                 {!loading && data.length > 0 && (
-
                     <>
                         <Chart title="Température (°C)" data={data} dataKey="temperature" color="#ff7300" period={period} />
                         <Chart title="Humidité (%)" data={data} dataKey="humidity" color="#00b894" period={period} />
                         <Chart title="Batterie (%)" data={data} dataKey="battery" color="#0984e3" period={period} />
                     </>
-
                 )}
 
             </div>

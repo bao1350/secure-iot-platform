@@ -894,3 +894,417 @@
 1784153137: Client auto-44036E11-A489-8F7E-FE34-42FED027F9DB [172.19.0.5:49911] disconnected: connection closed by client.
 1784153137: mosquitto version 2.1.2 terminating
 1784153137: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784200315: mosquitto version 2.1.2 starting
+1784200315: Config loaded from /mosquitto/config/mosquitto.conf.
+1784200315: Bridge support available.
+1784200315: Persistence support available.
+1784200315: TLS support available.
+1784200315: TLS-PSK support available.
+1784200315: Websockets support available.
+1784200315: Opening ipv4 listen socket on port 1883.
+1784200315: Opening ipv6 listen socket on port 1883.
+1784200315: mosquitto version 2.1.2 running
+1784200317: New connection from 172.19.0.5:59803 on port 1883.
+1784200317: New client connected from 172.19.0.5:59803 as auto-A48D056D-A56E-A37A-7FC3-2E66102860C0 (p4, c1, k60).
+1784201911: mosquitto version 2.1.2 terminating
+1784201911: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201917: mosquitto version 2.1.2 starting
+1784201917: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201917: Bridge support available.
+1784201917: Persistence support available.
+1784201917: TLS support available.
+1784201917: TLS-PSK support available.
+1784201917: Websockets support available.
+1784201917: Opening ipv4 listen socket on port 1883.
+1784201917: Opening ipv6 listen socket on port 1883.
+1784201917: Opening ipv4 listen socket on port 8883.
+1784201917: Opening ipv6 listen socket on port 8883.
+1784201917: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201917: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201917: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201917: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201917: mosquitto version 2.1.2 terminating
+1784201917: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201919: mosquitto version 2.1.2 starting
+1784201919: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201919: Bridge support available.
+1784201919: Persistence support available.
+1784201919: TLS support available.
+1784201919: TLS-PSK support available.
+1784201919: Websockets support available.
+1784201919: Opening ipv4 listen socket on port 1883.
+1784201919: Opening ipv6 listen socket on port 1883.
+1784201919: Opening ipv4 listen socket on port 8883.
+1784201919: Opening ipv6 listen socket on port 8883.
+1784201919: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201919: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201919: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201919: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201919: mosquitto version 2.1.2 terminating
+1784201919: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201920: mosquitto version 2.1.2 starting
+1784201920: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201920: Bridge support available.
+1784201920: Persistence support available.
+1784201920: TLS support available.
+1784201920: TLS-PSK support available.
+1784201920: Websockets support available.
+1784201920: Opening ipv4 listen socket on port 1883.
+1784201920: Opening ipv6 listen socket on port 1883.
+1784201920: Opening ipv4 listen socket on port 8883.
+1784201920: Opening ipv6 listen socket on port 8883.
+1784201920: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201920: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201920: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201920: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201920: mosquitto version 2.1.2 terminating
+1784201920: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201921: mosquitto version 2.1.2 starting
+1784201921: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201921: Bridge support available.
+1784201921: Persistence support available.
+1784201921: TLS support available.
+1784201921: TLS-PSK support available.
+1784201921: Websockets support available.
+1784201921: Opening ipv4 listen socket on port 1883.
+1784201921: Opening ipv6 listen socket on port 1883.
+1784201921: Opening ipv4 listen socket on port 8883.
+1784201921: Opening ipv6 listen socket on port 8883.
+1784201921: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201921: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201921: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201921: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201921: mosquitto version 2.1.2 terminating
+1784201921: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201922: mosquitto version 2.1.2 starting
+1784201922: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201922: Bridge support available.
+1784201922: Persistence support available.
+1784201922: TLS support available.
+1784201922: TLS-PSK support available.
+1784201922: Websockets support available.
+1784201922: Opening ipv4 listen socket on port 1883.
+1784201922: Opening ipv6 listen socket on port 1883.
+1784201922: Opening ipv4 listen socket on port 8883.
+1784201922: Opening ipv6 listen socket on port 8883.
+1784201922: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201922: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201922: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201922: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201922: mosquitto version 2.1.2 terminating
+1784201922: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201924: mosquitto version 2.1.2 starting
+1784201924: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201924: Bridge support available.
+1784201924: Persistence support available.
+1784201924: TLS support available.
+1784201924: TLS-PSK support available.
+1784201924: Websockets support available.
+1784201924: Opening ipv4 listen socket on port 1883.
+1784201924: Opening ipv6 listen socket on port 1883.
+1784201924: Opening ipv4 listen socket on port 8883.
+1784201924: Opening ipv6 listen socket on port 8883.
+1784201924: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201924: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201924: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201924: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201924: mosquitto version 2.1.2 terminating
+1784201924: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201928: mosquitto version 2.1.2 starting
+1784201928: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201928: Bridge support available.
+1784201928: Persistence support available.
+1784201928: TLS support available.
+1784201928: TLS-PSK support available.
+1784201928: Websockets support available.
+1784201928: Opening ipv4 listen socket on port 1883.
+1784201928: Opening ipv6 listen socket on port 1883.
+1784201928: Opening ipv4 listen socket on port 8883.
+1784201928: Opening ipv6 listen socket on port 8883.
+1784201928: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201928: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201928: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201928: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201928: mosquitto version 2.1.2 terminating
+1784201928: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201934: mosquitto version 2.1.2 starting
+1784201934: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201934: Bridge support available.
+1784201934: Persistence support available.
+1784201934: TLS support available.
+1784201934: TLS-PSK support available.
+1784201934: Websockets support available.
+1784201934: Opening ipv4 listen socket on port 1883.
+1784201934: Opening ipv6 listen socket on port 1883.
+1784201934: Opening ipv4 listen socket on port 8883.
+1784201934: Opening ipv6 listen socket on port 8883.
+1784201934: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201934: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201934: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201934: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201934: mosquitto version 2.1.2 terminating
+1784201934: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201947: mosquitto version 2.1.2 starting
+1784201947: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201947: Bridge support available.
+1784201947: Persistence support available.
+1784201947: TLS support available.
+1784201947: TLS-PSK support available.
+1784201947: Websockets support available.
+1784201947: Opening ipv4 listen socket on port 1883.
+1784201947: Opening ipv6 listen socket on port 1883.
+1784201947: Opening ipv4 listen socket on port 8883.
+1784201947: Opening ipv6 listen socket on port 8883.
+1784201947: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201947: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201947: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201947: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201947: mosquitto version 2.1.2 terminating
+1784201947: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784201973: mosquitto version 2.1.2 starting
+1784201973: Config loaded from /mosquitto/config/mosquitto.conf.
+1784201973: Bridge support available.
+1784201973: Persistence support available.
+1784201973: TLS support available.
+1784201973: TLS-PSK support available.
+1784201973: Websockets support available.
+1784201973: Opening ipv4 listen socket on port 1883.
+1784201973: Opening ipv6 listen socket on port 1883.
+1784201973: Opening ipv4 listen socket on port 8883.
+1784201973: Opening ipv6 listen socket on port 8883.
+1784201973: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784201973: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784201973: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784201973: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784201973: mosquitto version 2.1.2 terminating
+1784201973: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784202025: mosquitto version 2.1.2 starting
+1784202025: Config loaded from /mosquitto/config/mosquitto.conf.
+1784202025: Bridge support available.
+1784202025: Persistence support available.
+1784202025: TLS support available.
+1784202025: TLS-PSK support available.
+1784202025: Websockets support available.
+1784202025: Opening ipv4 listen socket on port 1883.
+1784202025: Opening ipv6 listen socket on port 1883.
+1784202025: Opening ipv4 listen socket on port 8883.
+1784202025: Opening ipv6 listen socket on port 8883.
+1784202025: Error: Unable to load server key file "/mosquitto/certs/server.key". Check keyfile.
+1784202025: OpenSSL Error [0]: error:8000000D:system library::Permission denied
+1784202025: OpenSSL Error [1]: error:10080002:BIO routines::system lib
+1784202025: OpenSSL Error [2]: error:0A080002:SSL routines::system lib
+1784202025: mosquitto version 2.1.2 terminating
+1784202025: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784202080: mosquitto version 2.1.2 starting
+1784202080: Config loaded from /mosquitto/config/mosquitto.conf.
+1784202080: Bridge support available.
+1784202080: Persistence support available.
+1784202080: TLS support available.
+1784202080: TLS-PSK support available.
+1784202080: Websockets support available.
+1784202080: Opening ipv4 listen socket on port 1883.
+1784202080: Opening ipv6 listen socket on port 1883.
+1784202080: Opening ipv4 listen socket on port 8883.
+1784202080: Opening ipv6 listen socket on port 8883.
+1784202080: mosquitto version 2.1.2 running
+1784202082: New connection from 172.19.0.5:49799 on port 1883.
+1784202082: New client connected from 172.19.0.5:49799 as auto-41983EB4-96A5-F71F-77BA-3313A24D8B82 (p4, c1, k60).
+1784203368: Client auto-41983EB4-96A5-F71F-77BA-3313A24D8B82 [172.19.0.5:49799] disconnected: connection closed by client.
+1784203369: mosquitto version 2.1.2 terminating
+1784203369: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784203932: mosquitto version 2.1.2 starting
+1784203932: Config loaded from /mosquitto/config/mosquitto.conf.
+1784203932: Bridge support available.
+1784203932: Persistence support available.
+1784203932: TLS support available.
+1784203932: TLS-PSK support available.
+1784203932: Websockets support available.
+1784203932: Opening ipv4 listen socket on port 1883.
+1784203932: Opening ipv6 listen socket on port 1883.
+1784203932: Opening ipv4 listen socket on port 8883.
+1784203932: Opening ipv6 listen socket on port 8883.
+1784203932: mosquitto version 2.1.2 running
+1784203935: New connection from 172.19.0.5:46827 on port 1883.
+1784203935: New client connected from 172.19.0.5:46827 as auto-BB8BC6F0-7C07-AD2B-2FE3-1EA0907DDB31 (p4, c1, k60).
+1784203939: New connection from 172.19.0.1:46056 on port 1883.
+1784203939: New client connected from 172.19.0.1:46056 as auto-08CAF543-18B9-C581-EF36-120C846CD3AC (p4, c1, k60).
+1784204181: Client auto-BB8BC6F0-7C07-AD2B-2FE3-1EA0907DDB31 [172.19.0.5:46827] disconnected: connection closed by client.
+1784204196: mosquitto version 2.1.2 starting
+1784204196: Config loaded from /mosquitto/config/mosquitto.conf.
+1784204196: Bridge support available.
+1784204196: Persistence support available.
+1784204196: TLS support available.
+1784204196: TLS-PSK support available.
+1784204196: Websockets support available.
+1784204196: Opening ipv4 listen socket on port 1883.
+1784204196: Opening ipv6 listen socket on port 1883.
+1784204196: Opening ipv4 listen socket on port 8883.
+1784204196: Opening ipv6 listen socket on port 8883.
+1784204196: mosquitto version 2.1.2 running
+1784204198: New connection from 172.19.0.5:33373 on port 1883.
+1784204198: New client connected from 172.19.0.5:33373 as auto-839DC87C-8DE6-EBCB-5C1C-BCA5160A38F3 (p4, c1, k60).
+1784204202: New connection from 172.19.0.1:54080 on port 1883.
+1784204202: New client connected from 172.19.0.1:54080 as auto-83029F37-E2E3-F892-DA42-14C4972A1273 (p4, c1, k60).
+1784204357: Client auto-83029F37-E2E3-F892-DA42-14C4972A1273 [172.19.0.1:54080] disconnected: connection closed by client.
+1784204360: Client auto-839DC87C-8DE6-EBCB-5C1C-BCA5160A38F3 [172.19.0.5:33373] disconnected: connection closed by client.
+1784204361: mosquitto version 2.1.2 terminating
+1784204361: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784204864: mosquitto version 2.1.2 starting
+1784204864: Config loaded from /mosquitto/config/mosquitto.conf.
+1784204864: Bridge support available.
+1784204864: Persistence support available.
+1784204864: TLS support available.
+1784204864: TLS-PSK support available.
+1784204864: Websockets support available.
+1784204864: Opening ipv4 listen socket on port 1883.
+1784204864: Opening ipv6 listen socket on port 1883.
+1784204864: Opening ipv4 listen socket on port 8883.
+1784204864: Opening ipv6 listen socket on port 8883.
+1784204864: mosquitto version 2.1.2 running
+1784204864: New connection from 172.19.0.1:37026 on port 1883.
+1784204864: New client connected from 172.19.0.1:37026 as auto-F1EB87E8-A0E6-53DF-1DD5-1085CDE70768 (p4, c1, k60).
+1784204865: New connection from 172.19.0.4:40957 on port 1883.
+1784204865: New client connected from 172.19.0.4:40957 as auto-D9C41265-6B0D-337C-5091-3CF913600381 (p4, c1, k60).
+1784205144: Client auto-F1EB87E8-A0E6-53DF-1DD5-1085CDE70768 [172.19.0.1:37026] disconnected: connection closed by client.
+1784205154: Client auto-D9C41265-6B0D-337C-5091-3CF913600381 [172.19.0.4:40957] disconnected: connection closed by client.
+1784205154: mosquitto version 2.1.2 terminating
+1784205154: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784205177: mosquitto version 2.1.2 starting
+1784205177: Config loaded from /mosquitto/config/mosquitto.conf.
+1784205177: Bridge support available.
+1784205177: Persistence support available.
+1784205177: TLS support available.
+1784205177: TLS-PSK support available.
+1784205177: Websockets support available.
+1784205177: Opening ipv4 listen socket on port 1883.
+1784205177: Opening ipv6 listen socket on port 1883.
+1784205177: Opening ipv4 listen socket on port 8883.
+1784205177: Opening ipv6 listen socket on port 8883.
+1784205177: mosquitto version 2.1.2 running
+1784205178: New connection from 172.19.0.5:53821 on port 1883.
+1784205178: New client connected from 172.19.0.5:53821 as auto-9605076B-D9BD-7EA2-D5C2-EFFB49F54BA9 (p4, c1, k60).
+1784205181: New connection from 172.19.0.1:52600 on port 1883.
+1784205181: New client connected from 172.19.0.1:52600 as auto-02958861-B52E-8B88-22A7-87D06AD8F680 (p4, c1, k60).
+1784205270: Client auto-02958861-B52E-8B88-22A7-87D06AD8F680 [172.19.0.1:52600] disconnected: connection closed by client.
+1784205276: Client auto-9605076B-D9BD-7EA2-D5C2-EFFB49F54BA9 [172.19.0.5:53821] disconnected: connection closed by client.
+1784205276: mosquitto version 2.1.2 terminating
+1784205276: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784205281: mosquitto version 2.1.2 starting
+1784205281: Config loaded from /mosquitto/config/mosquitto.conf.
+1784205281: Bridge support available.
+1784205281: Persistence support available.
+1784205281: TLS support available.
+1784205281: TLS-PSK support available.
+1784205281: Websockets support available.
+1784205281: Opening ipv4 listen socket on port 1883.
+1784205281: Opening ipv6 listen socket on port 1883.
+1784205281: Opening ipv4 listen socket on port 8883.
+1784205281: Opening ipv6 listen socket on port 8883.
+1784205281: mosquitto version 2.1.2 running
+1784205282: New connection from 172.19.0.1:57020 on port 1883.
+1784205282: New client connected from 172.19.0.1:57020 as auto-BA1F798E-B63F-DFF8-805E-526672F40D55 (p4, c1, k60).
+1784205282: New connection from 172.19.0.5:57357 on port 1883.
+1784205282: New client connected from 172.19.0.5:57357 as auto-636D7EF9-E006-127B-145C-A1E9F05AB8E1 (p4, c1, k60).
+1784205286: Client auto-BA1F798E-B63F-DFF8-805E-526672F40D55 [172.19.0.1:57020] disconnected: connection closed by client.
+1784205289: New connection from 172.19.0.1:57034 on port 1883.
+1784205289: New client connected from 172.19.0.1:57034 as auto-5447A646-1423-E72C-567D-3707FFA12E3C (p4, c1, k60).
+1784205435: Client auto-5447A646-1423-E72C-567D-3707FFA12E3C [172.19.0.1:57034] disconnected: connection closed by client.
+1784205439: Client auto-636D7EF9-E006-127B-145C-A1E9F05AB8E1 [172.19.0.5:57357] disconnected: connection closed by client.
+1784205439: mosquitto version 2.1.2 terminating
+1784205439: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784205447: mosquitto version 2.1.2 starting
+1784205447: Config loaded from /mosquitto/config/mosquitto.conf.
+1784205447: Bridge support available.
+1784205447: Persistence support available.
+1784205447: TLS support available.
+1784205447: TLS-PSK support available.
+1784205447: Websockets support available.
+1784205447: Opening ipv4 listen socket on port 1883.
+1784205447: Opening ipv6 listen socket on port 1883.
+1784205447: Opening ipv4 listen socket on port 8883.
+1784205447: Opening ipv6 listen socket on port 8883.
+1784205447: mosquitto version 2.1.2 running
+1784205448: New connection from 172.19.0.5:42249 on port 1883.
+1784205448: New client connected from 172.19.0.5:42249 as auto-F0F646B4-07CA-567F-1B4A-3881FD305A7A (p4, c1, k60).
+1784205452: New connection from 172.19.0.1:38328 on port 1883.
+1784205452: New client connected from 172.19.0.1:38328 as auto-E1C78131-3EFE-82AD-D6AE-AFE430D7B527 (p4, c1, k60).
+1784205756: Client auto-E1C78131-3EFE-82AD-D6AE-AFE430D7B527 [172.19.0.1:38328] disconnected: connection closed by client.
+1784205762: Client auto-F0F646B4-07CA-567F-1B4A-3881FD305A7A [172.19.0.5:42249] disconnected: connection closed by client.
+1784205762: mosquitto version 2.1.2 terminating
+1784205762: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784205767: mosquitto version 2.1.2 starting
+1784205767: Config loaded from /mosquitto/config/mosquitto.conf.
+1784205767: Bridge support available.
+1784205767: Persistence support available.
+1784205767: TLS support available.
+1784205767: TLS-PSK support available.
+1784205767: Websockets support available.
+1784205767: Opening ipv4 listen socket on port 1883.
+1784205767: Opening ipv6 listen socket on port 1883.
+1784205767: Opening ipv4 listen socket on port 8883.
+1784205767: Opening ipv6 listen socket on port 8883.
+1784205767: mosquitto version 2.1.2 running
+1784205768: New connection from 172.19.0.5:51777 on port 1883.
+1784205768: New client connected from 172.19.0.5:51777 as auto-62626C4F-49F2-E9B9-A237-AE9B029E2EE0 (p4, c1, k60).
+1784205771: New connection from 172.19.0.1:48534 on port 1883.
+1784205771: New client connected from 172.19.0.1:48534 as auto-9CDCA3B3-4265-6FE7-F578-26A112356870 (p4, c1, k60).
+1784206113: Client auto-9CDCA3B3-4265-6FE7-F578-26A112356870 [172.19.0.1:48534] disconnected: connection closed by client.
+1784206119: Client auto-62626C4F-49F2-E9B9-A237-AE9B029E2EE0 [172.19.0.5:51777] disconnected: connection closed by client.
+1784206119: mosquitto version 2.1.2 terminating
+1784206119: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784206564: mosquitto version 2.1.2 starting
+1784206564: Config loaded from /mosquitto/config/mosquitto.conf.
+1784206564: Bridge support available.
+1784206564: Persistence support available.
+1784206564: TLS support available.
+1784206564: TLS-PSK support available.
+1784206564: Websockets support available.
+1784206564: Opening ipv4 listen socket on port 1883.
+1784206564: Opening ipv6 listen socket on port 1883.
+1784206564: Opening ipv4 listen socket on port 8883.
+1784206564: Opening ipv6 listen socket on port 8883.
+1784206564: mosquitto version 2.1.2 running
+1784206565: New connection from 172.19.0.5:45041 on port 1883.
+1784206565: New client connected from 172.19.0.5:45041 as auto-1C212E2C-D9D3-3975-93C9-A2B82476EA4F (p4, c1, k60).
+1784206586: New connection from 172.19.0.1:44680 on port 1883.
+1784206586: New client connected from 172.19.0.1:44680 as auto-5ECE5B1A-6184-8D95-667C-D17BAE4E9F4E (p4, c1, k60).
+1784207319: Client auto-5ECE5B1A-6184-8D95-667C-D17BAE4E9F4E [172.19.0.1:44680] disconnected: connection closed by client.
+1784207321: Client auto-1C212E2C-D9D3-3975-93C9-A2B82476EA4F [172.19.0.5:45041] disconnected: connection closed by client.
+1784207321: mosquitto version 2.1.2 terminating
+1784207321: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784207328: mosquitto version 2.1.2 starting
+1784207328: Config loaded from /mosquitto/config/mosquitto.conf.
+1784207328: Bridge support available.
+1784207328: Persistence support available.
+1784207328: TLS support available.
+1784207328: TLS-PSK support available.
+1784207328: Websockets support available.
+1784207328: Opening ipv4 listen socket on port 1883.
+1784207328: Opening ipv6 listen socket on port 1883.
+1784207328: Opening ipv4 listen socket on port 8883.
+1784207328: Opening ipv6 listen socket on port 8883.
+1784207328: mosquitto version 2.1.2 running
+1784207329: New connection from 172.19.0.5:53249 on port 1883.
+1784207329: New client connected from 172.19.0.5:53249 as auto-10E9404D-EACF-AEC1-5CD5-1888ECCA4EC7 (p4, c1, k60).
+1784207329: New connection from 172.19.0.1:33920 on port 1883.
+1784207329: New client connected from 172.19.0.1:33920 as auto-1E5B3996-3B3E-CA6A-AD90-3F2123331E2B (p4, c1, k60).
+1784207562: Client auto-1E5B3996-3B3E-CA6A-AD90-3F2123331E2B [172.19.0.1:33920] disconnected: connection closed by client.
+1784207567: Client auto-10E9404D-EACF-AEC1-5CD5-1888ECCA4EC7 [172.19.0.5:53249] disconnected: connection closed by client.
+1784207567: mosquitto version 2.1.2 terminating
+1784207567: Saving in-memory database to /mosquitto/data//mosquitto.db.
+1784207572: mosquitto version 2.1.2 starting
+1784207572: Config loaded from /mosquitto/config/mosquitto.conf.
+1784207572: Bridge support available.
+1784207572: Persistence support available.
+1784207572: TLS support available.
+1784207572: TLS-PSK support available.
+1784207572: Websockets support available.
+1784207572: Opening ipv4 listen socket on port 1883.
+1784207572: Opening ipv6 listen socket on port 1883.
+1784207572: Opening ipv4 listen socket on port 8883.
+1784207572: Opening ipv6 listen socket on port 8883.
+1784207572: mosquitto version 2.1.2 running
+1784207574: New connection from 172.19.0.5:34331 on port 1883.
+1784207574: New client connected from 172.19.0.5:34331 as auto-179ADD4D-96D6-DE1C-4FDA-F556B0058618 (p4, c1, k60).
+1784207583: New connection from 172.19.0.1:52752 on port 1883.
+1784207583: New client connected from 172.19.0.1:52752 as auto-0B3AB294-F41D-F1F5-A2AE-FBCC6FA5F9A6 (p4, c1, k60).

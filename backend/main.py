@@ -1,4 +1,5 @@
 ﻿from contextlib import asynccontextmanager
+import asyncio
 import threading
 
 from fastapi import FastAPI
@@ -7,12 +8,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.database import engine
 from backend.models import Base
 from backend.mqtt_client import start_mqtt
-from backend.routers import auth_router, measures_router, sensors_router
+from backend.routers import auth_router, measures_router, sensors_router, ws_router
+from backend.ws_manager import manager
 
 Base.metadata.create_all(bind=engine)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    loop = asyncio.get_event_loop()
+    manager.set_loop(loop)
     mqtt_thread = threading.Thread(target=start_mqtt, daemon=True)
     mqtt_thread.start()
     print("🚀 Client MQTT démarré")
@@ -31,6 +35,7 @@ app.add_middleware(
 app.include_router(auth_router)
 app.include_router(measures_router)
 app.include_router(sensors_router)
+app.include_router(ws_router)
 
 
 @app.get("/")

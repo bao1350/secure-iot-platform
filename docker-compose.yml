@@ -47,12 +47,14 @@ services:
 
     ports:
       - "1883:1883"
+      - "8883:8883"
       - "9001:9001"
 
     volumes:
       - ./docker/mosquitto/config:/mosquitto/config
       - ./docker/mosquitto/data:/mosquitto/data
       - ./docker/mosquitto/log:/mosquitto/log
+      - ./docker/mosquitto/certs:/mosquitto/certs
 
     networks:
       - iot-network
@@ -72,6 +74,13 @@ services:
     ports:
       - "8000:8000"
 
+    volumes:
+      - ./backend/certs:/app/backend/certs
+
+    environment:
+      - SSL_CERTFILE=/app/backend/certs/cert.pem
+      - SSL_KEYFILE=/app/backend/certs/key.pem
+
     networks:
       - iot-network
   frontend:
@@ -86,7 +95,7 @@ services:
       - backend
 
     environment:
-      VITE_API_URL: http://localhost:8000
+      VITE_API_URL: https://localhost:8000
 
     ports:
       - "5173:5173"
