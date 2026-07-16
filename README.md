@@ -4,6 +4,23 @@
 
 Cette plateforme sécurise les échanges IoT avec une API FastAPI, un broker MQTT Mosquitto et une interface frontend. Le projet est conçu pour fonctionner dans Docker avec HTTPS pour l’API et TLS optionnel pour MQTT.
 
+## Convention MQTT
+
+Toutes les mesures sont publiées sur le topic `iot/sensors/{sensor_id}/measures`.
+
+Exemple pour le capteur `1` : `iot/sensors/1/measures`.
+
+Le message JSON doit contenir le même `sensor_id` que celui présent dans le topic :
+
+```json
+{
+  "sensor_id": 1,
+  "temperature": 22.3,
+  "humidity": 45,
+  "battery": 96
+}
+```
+
 ## Prérequis
 
 - Docker
@@ -20,6 +37,10 @@ Cette plateforme sécurise les échanges IoT avec une API FastAPI, un broker MQT
 - `docker-compose.yml` : orchestration de tous les services
 
 ## 1. Lancer le projet avec Docker Compose
+
+Les migrations de base de données sont appliquées automatiquement au démarrage du backend. La première migration crée une base neuve ou renforce une base créée par l'ancienne version. Les anciennes mesures sans `sensor_id` sont conservées dans `legacy_invalid_measures`, car elles ne peuvent pas appartenir à un capteur actif. Avant toute mise à niveau, réalisez une sauvegarde ; les autres valeurs nulles, hors plage ou relations incohérentes restent bloquantes.
+
+Avant le premier lancement, copiez `.env.example` vers `.env`, puis remplacez toutes les valeurs d'exemple par des secrets forts. Le fichier `.env` est ignoré par Git.
 
 ### 1.1. Générer les certificats pour le backend
 

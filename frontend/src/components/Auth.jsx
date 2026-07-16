@@ -19,15 +19,13 @@ function Auth() {
         const response = await apiLogin(loginEmail, loginPassword);
         const data = await response.json();
 
-        if (data.access_token) {
-
-            localStorage.setItem("token", data.access_token);
+        if (response.ok) {
             navigate("/dashboard");
 
         }
         else {
 
-            alert(data.message || "Erreur de connexion");
+            alert(data.detail || "Identifiants invalides");
 
         }
 

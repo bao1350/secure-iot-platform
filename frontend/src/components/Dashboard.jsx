@@ -6,6 +6,7 @@ import CreateSensor from "./CreateSensor";
 import SensorChart from "./Sensor_Chart";
 import { getDashboard, getSensor } from "../api/dashboard";
 import { deleteSensor as deleteSensorApi } from "../api/sensor";
+import { logout as apiLogout } from "../api/auth";
 
 function Dashboard(){
 
@@ -143,8 +144,6 @@ function Dashboard(){
 
     async function deleteSensor(id){
 
-        const token = localStorage.getItem("token");
-
         const oldSensors = [...sensors];
 
         setSensors(
@@ -166,10 +165,8 @@ function Dashboard(){
 
 
 
-    function logout(){
-
-        localStorage.removeItem("token");
-
+    async function logout(){
+        await apiLogout();
         navigate("/");
 
     }

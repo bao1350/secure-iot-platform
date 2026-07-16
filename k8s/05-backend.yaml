@@ -19,14 +19,11 @@ spec:
           imagePullPolicy: Never        # ne va pas chercher sur un registre distant
           ports:
             - containerPort: 8000
-          env:
-            - name: POSTGRES_HOST
-              value: postgres            # DNS interne = nom du Service
-            - name: MQTT_HOST
-              value: mosquitto
           envFrom:
+            - configMapRef:
+                name: backend-config
             - secretRef:
-                name: postgres-secret
+                name: backend-secret
 ---
 apiVersion: v1
 kind: Service

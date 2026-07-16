@@ -38,6 +38,24 @@ kubectl create configmap mosquitto-config \
 
 ## 4. Appliquer tous les manifests
 
+Avant d'appliquer les manifests, créez les secrets hors de Git. Ne stockez pas
+leurs valeurs dans un fichier Kubernetes versionné. Les secrets requis sont :
+
+- `postgres-secret` : `POSTGRES_USER`, `POSTGRES_PASSWORD`, `POSTGRES_DB` ;
+- `pgadmin-secret` : `PGADMIN_DEFAULT_EMAIL`, `PGADMIN_DEFAULT_PASSWORD` ;
+- `backend-secret` : `DATABASE_URL`, `SECRET_KEY`.
+
+Exemple de création (remplacez chaque valeur avant exécution) :
+
+```bash
+kubectl create secret generic backend-secret \
+  -n iot-platform \
+  --from-literal=DATABASE_URL='postgresql://USER:PASSWORD@postgres:5432/iot_platform' \
+  --from-literal=SECRET_KEY='secret-jwt-aleatoire'
+```
+
+Créez les deux autres secrets avec la même commande et les clés indiquées ci-dessus.
+
 ```bash
 kubectl apply -f 00-namespace.yaml
 kubectl apply -f 01-secrets-config.yaml

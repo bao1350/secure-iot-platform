@@ -19,3 +19,7 @@ export async function register(email, password) {
 
     return response;
 }
+
+export async function logout() {
+    return apiFetch("/auth/logout", { method: "POST" });
+}

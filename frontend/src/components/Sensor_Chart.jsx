@@ -21,7 +21,6 @@ function SensorChart({ sensor, onClose }){
             const res = await getSensorHistory(sensor.id, period);
 
             if(res.status === 401){
-                localStorage.removeItem("token");
                 window.location = "/";
                 return;
             }
