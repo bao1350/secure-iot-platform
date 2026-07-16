@@ -5,13 +5,9 @@ import threading
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.database import engine
-from backend.models import Base
 from backend.mqtt_client import start_mqtt
 from backend.routers import auth_router, measures_router, sensors_router, ws_router
 from backend.ws_manager import manager
-
-Base.metadata.create_all(bind=engine)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):

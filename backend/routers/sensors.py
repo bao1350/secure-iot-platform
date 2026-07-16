@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from backend.schemas import SensorCreate
 from backend.deps import get_db
-from backend.auth import get_current_user
+from backend.auth import get_current_user, validate_csrf
 from backend.models import Sensor
 from backend.services.sensor_service import (
     delete_sensor,
@@ -20,7 +20,8 @@ router = APIRouter(prefix="/sensors", tags=["Sensors"])
 def create_sensor(
     sensor: SensorCreate,
     db: Session = Depends(get_db),
-    user=Depends(get_current_user)
+    user=Depends(get_current_user),
+    _: None = Depends(validate_csrf),
 ):
     new_sensor = Sensor(
         name=sensor.name,
@@ -40,7 +41,8 @@ def create_sensor(
 def delete_sensor_route(
     sensor_id: int,
     db: Session = Depends(get_db),
-    user=Depends(get_current_user)
+    user=Depends(get_current_user),
+    _: None = Depends(validate_csrf),
 ):
     sensor = get_user_sensor(sensor_id, user, db)
     delete_sensor(sensor, db)

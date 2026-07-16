@@ -9,7 +9,7 @@ client.connect("localhost", 1883)
 
 while True:
 
-    for sensor_id in [1, 2, 3]:
+    for sensor_id in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]:
 
         data = {
             "sensor_id": sensor_id,
@@ -19,7 +19,7 @@ while True:
         }
 
         client.publish(
-            f"iot/sensor/{sensor_id}",
+            f"iot/sensors/{sensor_id}/measures",
             json.dumps(data)
         )
 

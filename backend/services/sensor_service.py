@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from typing import List, Optional
 
 from fastapi import HTTPException
-from sqlalchemy import func, text
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from backend.models import Measure, Sensor, User
@@ -101,7 +101,3 @@ def list_dashboard_sensors(user: User, db: Session) -> List[dict]:
 def delete_sensor(sensor: Sensor, db: Session) -> None:
     db.delete(sensor)
     db.commit()
-
-    if db.query(Sensor).count() == 0:
-        db.execute(text("ALTER SEQUENCE sensors_id_seq RESTART WITH 1"))
-        db.commit()

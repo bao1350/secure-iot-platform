@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = "postgresql://admin:changeme@postgres:5432/iot_platform"
+from backend.config import DATABASE_URL
 
 engine = create_engine(DATABASE_URL)
 

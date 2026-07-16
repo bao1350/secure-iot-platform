@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 
 from backend.schemas import MeasureCreate
 from backend.deps import get_db
-from backend.auth import get_current_user
+from backend.auth import get_current_user, validate_csrf
 from backend.models import Measure, Sensor
 from backend.services.sensor_service import get_user_sensor
 
@@ -14,7 +14,8 @@ router = APIRouter(prefix="/measures", tags=["Measures"])
 def create_measure(
     measure: MeasureCreate,
     db: Session = Depends(get_db),
-    user=Depends(get_current_user)
+    user=Depends(get_current_user),
+    _: None = Depends(validate_csrf),
 ):
     sensor = get_user_sensor(measure.sensor_id, user, db)
 
