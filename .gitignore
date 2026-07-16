@@ -1,8 +1,18 @@
+# dependencies
 node_modules/
+
+# local configuration and secrets
 .env
+backend/certs/
+docker/mosquitto/certs/
+
+# Python artifacts
 __pycache__/
 *.pyc
 .venv/
 venv/
+backend/venv/
+
+# build output
 dist/
 build/
